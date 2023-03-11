@@ -137,6 +137,9 @@ export function Paginate({
           );
           break;
         }
+
+        default:
+          break;
     }
 
     return pageNumbers;
@@ -144,7 +147,7 @@ export function Paginate({
 
   useEffect(() => {
     setPageNumbers(calculatePageNumbers(totalPages));
-  }, [windowWidth, currentPage, totalPages]);
+  }, [windowWidth, currentPage, totalPages, calculatePageNumbers]);
 
 
   return (
@@ -172,7 +175,7 @@ export function Paginate({
               windowWidth < 750 ? styles.listItemSmall : styles.listItem
             }
             id={number}
-            value={pageNumbersToPaint == number ? 'focus' : null}>
+            value={+pageNumbersToPaint === +number ? 'focus' : null}>
             {number}
           </li>
         ))}
