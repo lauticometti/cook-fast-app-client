@@ -19,7 +19,7 @@ export function Filter({setCurrentPage}) {
     dispatch(filterByDiets(currentDiets))
     dispatch(filterByCreator(creatorFilter))
     setCurrentPage(1)
-  }, [dispatch, currentDiets, creatorFilter])
+  }, [dispatch, currentDiets, creatorFilter, setCurrentPage])
 
 
 
