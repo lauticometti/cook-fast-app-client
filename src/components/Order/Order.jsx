@@ -33,7 +33,7 @@ export function Order() {
       default: 
         dispatch(orderByHealthScore(order)) 
         break;
-    }}, [order, typeOrder])
+    }}, [dispatch, order, typeOrder])
 
   const handleOrderInput = (event) => {
     const value = event.target.id
