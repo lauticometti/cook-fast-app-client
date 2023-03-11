@@ -11,7 +11,6 @@ import {
   CREATE_RECIPE,
 } from "./action-types";
 import axios from "axios";
-import data from "../data.js";
 
 
 // axios.defaults.baseURL = 'http://localhost:3001'
