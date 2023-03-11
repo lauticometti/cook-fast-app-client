@@ -16,7 +16,7 @@ export function Form() {
 
   useEffect(() => {
     dispatch(getDiets());
-  }, [dispatch, getDiets]);
+  }, [dispatch]);
 
   const diets = useSelector((state) => state.diets);
 
@@ -405,7 +405,7 @@ export function Form() {
           <div className={styles.imagePreviewContainer}>
             <img
               src={inputs.image}
-              alt="recipe image"
+              alt="recipe"
               className={styles.imagePreview}
             />
             <img
