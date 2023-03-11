@@ -13,9 +13,13 @@ import {
 import axios from "axios";
 import data from "../data.js";
 
+
+// axios.defaults.baseURL = 'http://localhost:3001'
+axios.defaults.baseURL = 'https://cook-fast-app-api-production.up.railway.app'
+
 export const getRecipes = () => async (dispatch) => {
   try {
-    const response = await axios.get("http://localhost:3001/recipes");
+    const response = await axios.get("/recipes");
     return dispatch({
       type: GET_RECIPES,
       payload: response.data,
@@ -28,7 +32,7 @@ export const getRecipes = () => async (dispatch) => {
 export const getRecipesByName = (recipeName) => async (dispatch) => {
   try {
     const response = await axios.get(
-      `http://localhost:3001/recipes?name=${recipeName}`
+      `/recipes?name=${recipeName}`
     );
     return dispatch({
       type: GET_RECIPES_NAME,
@@ -41,7 +45,7 @@ export const getRecipesByName = (recipeName) => async (dispatch) => {
 
 export const getRecipeById = (id) => async (dispatch) => {
   try {
-    const response = await axios.get(`http://localhost:3001/recipes/${id}`);
+    const response = await axios.get(`/recipes/${id}`);
     return dispatch({
       type: GET_RECIPE_ID,
       payload: response.data,
@@ -53,7 +57,7 @@ export const getRecipeById = (id) => async (dispatch) => {
 
 export const getDiets = () => async (dispatch) => {
   try {
-    const response = await axios.get("http://localhost:3001/diets");
+    const response = await axios.get("/diets");
     return dispatch({
       type: GET_DIETS,
       payload: response.data,
@@ -66,7 +70,7 @@ export const getDiets = () => async (dispatch) => {
 export const createRecipe = (formData) => async (dispatch) => {
   try {
     const response = await axios.post(
-      "http://localhost:3001/recipes",
+      "/recipes",
       formData
     );
     return dispatch({
