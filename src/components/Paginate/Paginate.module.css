@@ -1,0 +1,110 @@
+.container {
+  width: 85%;
+  margin: 50px auto;
+}
+
+.list {
+  list-style: none;
+  font-family: Poppins;
+  font-size: 32px;
+  font-weight: bolder;
+  
+  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  align-items: center;
+  justify-content: center;
+}
+
+.listItem, .listItemFirst, .listItemLast, .listItemSmall, .listItemSmallFirst, .listItemSmallLast {
+  width: 40px;
+  height: 40px;
+  background-color: #0a0a0a;
+  color: #ff8e0a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s;
+}
+
+.listItem:hover, .listItemFirst:hover, .listItemLast:hover, .listItemSmall:hover, .listItemSmallFirst:hover, .listItemSmallLast:hover {
+  background-color: #11100e;
+  transition: .4s;
+}
+
+
+[value="focus"] {
+  background-color: #ff8e0a;
+  color: #000;
+}
+
+[value="focus"]:hover {
+  background-color: #ff8e0a;
+  color: #000;
+}
+
+.listItemSmall, .listItemSmallFirst, .listItemSmallLast {
+  width: 33px;
+  height: 33px;
+  font-size: 28px;
+}
+
+.listItemSmallFirst{
+  margin-right: 10px;
+  position: relative;
+}
+
+.listItemSmallFirst::after {
+  content: '...';
+  position: absolute;
+  color: #ff8e0a;
+  font-size: 24px;
+  top: 5px;
+  right: -28px ;
+}
+
+.listItemFirst {
+  margin-right: 20px;
+  position: relative;
+}
+
+.listItemFirst::after {
+  content: '...';
+  position: absolute;
+  color: #ff8e0a;
+  font-size: 28px;
+  top: 8px;
+  right: -32px ;
+}
+
+.listItemSmallLast {
+  margin-left: 10px;
+  position: relative;
+}
+
+.listItemSmallLast::after {
+  content: '...';
+  position: absolute;
+  color: #ff8e0a;
+  font-size: 24px;
+  top: 5px;
+  left: -28px ;
+}
+
+.listItemLast {
+  margin-left: 20px;
+  position: relative;
+}
+
+.listItemLast::after {
+  content: '...';
+  position: absolute;
+  color: #ff8e0a;
+  font-size: 28px;
+  top: 8px;
+  left: -32px;
+}

@@ -1,0 +1,541 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+
+  margin-bottom: 80px;
+  padding-bottom: 100px;
+  position: relative;
+}
+
+form input, form textarea {
+  border-radius: 15px;
+  padding-left: 20px;
+  border: none;
+  width: 300px;
+  resize: none;
+
+  font-size: 18px;
+  font-weight: 900;
+  font-family: Poppins;
+  color: #181818;
+  background-color: #ff8e0a;
+}
+
+.form input::placeholder {
+  opacity: 1;
+  color: #181818;
+}
+
+.inputName {
+  width: 300px;
+  height: 50px;
+}
+
+/*  ==========  SUMMARY  ==========  */
+.inputSummary {
+  height: 200px;
+  padding-top: 10px;
+}
+
+.inputSummary::placeholder, .inputSteps::placeholder {
+  opacity: 1;
+  color: #181818;
+}
+
+.inputSummary:focus, .inputSteps:focus {
+  outline: none;
+}
+
+.inputSummary::-webkit-scrollbar, .inputSteps::-webkit-scrollbar {
+  width: 4px;
+}
+
+.inputSummary::-webkit-scrollbar-track, .inputSteps::-webkit-scrollbar-track {
+  border-radius: 100px;
+}
+
+.inputSummary::-webkit-scrollbar-thumb, .inputSteps::-webkit-scrollbar-thumb {
+  background-color: #181818;
+}
+
+
+/*  ==========  IMAGE  ==========  */
+.imageLabel {
+  height: 300px;
+  border-radius: 15px;
+  padding: 12px 0 0 20px;
+  border: none;
+  width: 300px;
+  
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 900;
+  color: #181818;
+  background-color: #ff8e0a;
+  position: relative;
+}
+
+.imagePreviewContainer {
+  width: 312px;
+  height: 231px;
+  position: relative;
+}
+
+.imagePreview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 3px solid #ff8e0a;
+  border-radius: 15px;
+}
+
+.imagePreviewClose {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.imagePreviewClose:hover {
+  cursor: pointer;
+}
+
+.imageLabelSpan {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 120px;
+  font-weight: 400;
+}
+
+.inputImage {
+  display: none;
+  height: 300px;
+}
+
+
+/*  ==========  RANGE  ==========  */
+.rangeLabel {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
+
+  background-color: #ff8e0a;
+  width: 300px;
+  height: 45px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.rangeSpan {
+  position: absolute;
+  color: #ff8e0a;
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 900;
+
+  top: -28px;
+  left: 25px;
+}
+
+.rangeNumber {
+  position: absolute;
+  color: #ff8e0a;
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 900;
+
+  top: -28px;
+  right: 25px;
+}
+
+.inputRange {
+  appearance: none;
+  -webkit-appearance: none;
+  background: rgba(45, 30, 1, 0.8);
+  background-image: linear-gradient(#181818, #242424);
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  width: 70%;
+  padding: 0;
+  height: 4px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.rangeMin, .rangeMax {
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 700;
+  color: #181818;
+}
+
+/* Input Thumb */
+.inputRange::-moz-range-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border: none;
+  border-radius: 50%;
+  background: #181818;
+
+  cursor: ew-resize;
+  transition: background .3s ease-in-out;
+}
+
+.inputRange::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border: none;
+  border-radius: 50%;
+  background: #181818;
+
+  cursor: ew-resize;
+  transition: background .3s ease-in-out;
+}
+
+.inputRange::-ms-thumb{
+  appearance: none;
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border: none;
+  border-radius: 50%;
+  background: #181818;
+
+  cursor: ew-resize;
+  transition: background .3s ease-in-out;
+}
+
+/* Input Track */
+.inputRange::-webkit-slider-runnable-track  { 
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+}
+
+.inputRange::-moz-range-track {
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+}
+
+.inputRange::-ms-track {
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+}
+
+
+/*  ==========  DIETS  ==========  */
+.dietsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  width: 300px;
+  max-height: 350px;
+  border-radius: 15px;
+  padding: 12px 20px;
+  overflow-y: auto;
+
+  background-color: #ff8e0a;
+  color: #181818;
+  font-family: Poppins;
+}
+
+.diets {
+  text-transform: uppercase;
+  font-weight: 900;
+  padding-bottom: 5px;
+  font-size: 19px;
+}
+
+.dietsLabel {
+  display: flex;
+  justify-content: space-between;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.dietCheck {
+  -webkit-appearance: none;
+  appearance: none;
+  font: inherit;
+  color: black;
+  
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #181818;
+  border-radius: 0;
+  
+  transform: translateY(0.3em);
+
+  display: grid;
+  place-content: center;
+}
+
+.dietCheck::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0) ;
+  transition: 0.2s ;
+  box-shadow: inset 1em 1em #181818;
+}
+
+.dietCheck:checked::before {
+  transform: scale(1) translate(0.45px, 0.38px);
+}
+
+
+/*  ==========  CUSTOM DIETS  ==========  */
+.dietLabel {
+  position: relative;
+}
+
+.inputCustomDiets {
+  height: 50px;
+}
+
+.createdDietsList, .createdStepsList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 270px;
+  margin-left: 30px;
+}
+
+.createdDietListItem, .createdStepListItem {
+  color: #909090;
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+
+/*  ==========  STEPS  ==========  */
+.stepsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stepLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 300px;
+  position: relative;
+}
+
+.inputSteps {
+  height: 100px;
+  padding-top: 10px;
+}
+
+.stepButton, .dietButton {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  border-radius: 10px;
+  background: #ff8e0a;
+  width: 40px; 
+
+  font-family: Poppins;
+  font-size: 30px;
+  font-weight: 600;  
+
+  position: absolute;
+  top: 50%;
+  right: -50px;
+  transform: translate(0%, -50%);
+}
+
+.createdStepsList {
+  width: 280px;
+  max-height: 500px ;
+  gap: 16px;
+  padding: 20px 10px 40px 20px;
+  margin: 0;
+  overflow-y: auto;
+}
+
+
+/*  ==========  BUTTON  ==========  */
+.formButton {
+  width: 320px;
+  height: 60px;
+  background-color: #ff8e0a;
+  color: #fff;
+
+  font-family: Poppins;
+  font-size: 22px;
+  font-weight: 900;
+
+  border: none;
+  position: absolute;
+  bottom: 0px;
+}
+
+.formButton:hover {
+  cursor: pointer;
+}
+
+.formButton::placeholder{ 
+  color: #fff;
+}
+
+
+/*  ==========  NAME, SUUMMARY AND RANGE BLOCK, IMAGE AND DIETS BLOCK==========  */
+.blockNaSuRa, .blockImDi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+
+/*  ==========  MEDIA 800PX  ==========  */
+@media (min-width:800px) {
+  .form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .inputSteps {
+    padding-right: 50px;
+  }
+  
+  .stepButton, .dietButton {
+    right: 10px;
+    background: #181818;
+    color: #ff8e0a;
+  }
+
+  .createdStepsList{
+    margin-top: 20px;
+    padding-top: 1px;
+  }
+
+  .formButton {
+    width: 620px;
+    height: 60px;
+    background-color: #ff8e0a;
+    color: #fff;
+  
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 900;
+  
+    border: none;
+  }
+}
+
+
+/*  ==========  MEDIA 1200PX  ==========  */
+@media (min-width: 1200px) {
+
+  .form {
+    gap: 60px;
+  }
+
+  .inputName {
+    width: 400px;
+    font-size: 20px;
+  }
+
+  .inputSummary {
+    width: 400px;
+    font-size: 20px;
+  }
+
+  .rangeLabel {
+    width: 400px;
+  }
+
+  .rangeSpan {
+    font-size: 20px;
+    top: -30px;
+  }
+  .rangeNumber {
+    font-size: 20px;
+    top: -30px;
+  }
+
+  .stepsContainer {
+    width: 400px;
+  }
+  
+  .stepLabel {
+    width: 400px;
+  }
+
+  .inputSteps {
+    width: 400px;
+    font-size: 20px;
+  }
+
+  .createdStepsList {
+    width: 400px;
+  }
+
+  .imageLabel {
+    width: 400px;
+    font-size: 20px;
+
+  }
+
+  .dietsContainer {
+    width: 400px;
+  }
+  
+  .diets {
+    font-size: 20px;
+  }
+
+  .dietsLabel {
+    font-size: 20px;
+  }
+
+  .dietLabel {
+    width: 400px;
+  }
+
+  .inputCustomDiets {
+    width: 400px;
+    font-size: 20px;
+  }
+
+  .createdDietsList {
+    width: 350px;
+    font-size: 20px;
+  }
+
+  .formButton {
+    width: 700px;
+    margin: 0 100px;
+  }
+}
