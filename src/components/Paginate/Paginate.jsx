@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import styles from "./Paginate.module.css";
 
 export function Paginate({
@@ -9,7 +9,7 @@ export function Paginate({
 }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [pageNumbers, setPageNumbers] = useState([]);
-  const [pageNumbersToPaint, setPageNumbersToPaint] = useState(currentPage)
+  const [pageNumbersToPaint, setPageNumbersToPaint] = useState(currentPage);
   const totalPages = Math.ceil(lengthRecipes / recipesPerPage);
   useEffect(() => {
     window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
@@ -21,10 +21,10 @@ export function Paginate({
     };
   }, []);
   useEffect(() => {
-    setPageNumbersToPaint(currentPage)
-  }, [currentPage])
+    setPageNumbersToPaint(currentPage);
+  }, [currentPage]);
 
-  const calculatePageNumbers = (totalPagesNumber) => {
+  const calculatePageNumbers = useCallback((totalPagesNumber) => {
     const allPageNumbers = [];
 
     for (let i = 2; i < totalPagesNumber; i++) {
@@ -138,17 +138,16 @@ export function Paginate({
           break;
         }
 
-        default:
-          break;
+      default:
+        break;
     }
 
     return pageNumbers;
-  };
+  }, [currentPage, totalPages, windowWidth]);
 
   useEffect(() => {
     setPageNumbers(calculatePageNumbers(totalPages));
   }, [windowWidth, currentPage, totalPages, calculatePageNumbers]);
-
 
   return (
     <nav className={styles.container}>
@@ -161,7 +160,7 @@ export function Paginate({
             windowWidth < 750 ? styles.listItemSmallFirst : styles.listItemFirst
           }
           id="1"
-          value={pageNumbersToPaint === 1 ? 'focus' : null}>
+          value={pageNumbersToPaint === 1 ? "focus" : null}>
           1
         </li>
 
@@ -175,7 +174,7 @@ export function Paginate({
               windowWidth < 750 ? styles.listItemSmall : styles.listItem
             }
             id={number}
-            value={+pageNumbersToPaint === +number ? 'focus' : null}>
+            value={+pageNumbersToPaint === +number ? "focus" : null}>
             {number}
           </li>
         ))}
@@ -188,7 +187,7 @@ export function Paginate({
             windowWidth < 750 ? styles.listItemSmallLast : styles.listItemLast
           }
           id={Math.ceil(lengthRecipes / recipesPerPage)}
-          value={pageNumbersToPaint === 12 ? 'focus' : null}>
+          value={pageNumbersToPaint === 12 ? "focus" : null}>
           {Math.ceil(lengthRecipes / recipesPerPage) || 2}
         </li>
       </ul>
